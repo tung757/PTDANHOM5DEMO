@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="stylecsss/stylethongtinsv.css">
+<?php
+    include("../connection.php");
+?>
+<?php
+    $sql="SELECT * FROM user";
+    $result=$mysqli->query($sql);
+    while($row=$result->fetch_assoc()){
+        ?>
+        <script>
+            function annut(){
+                window.location.href = "gdsinhvien.php";
+            }
+        </script>
+<style>
+</style>
+        <div
+        style="height: auto; display: flex; align-items: center; border: 2px solid green; border-radius: 20px; width: auto; margin: 20px;" onclick=annut()>
+        <img src="images/anhsv.png" alt="AnhSinhVien" height="50" width="auto">
+        <div class="thongtin" style="border-radius: 20px;"><?php  echo($row['iD'])?></div>
+        <div class="thongtin" style="border-radius: 20px;"><?php  echo($row['fullName'])?></div>
+        <div class="thongtin" style="border-radius: 20px;"><?php  echo($row['gender'])?></div>
+        <div class="thongtin" style="border-radius: 20px;"><?php  echo($row['address'])?></div>
+        <div class="thongtin" style="border-radius: 20px;"><?php  echo($row['class'])?></div>
+        <div class="thongtin" style="border-radius: 20px;"><?php  echo($row['sttKhoa'])?></div>
+        <div class="thongtin" style="border-radius: 20px;"><?php  echo($row['khoa'])?></div>
+        <div class="thongtin" style="border-radius: 20px;"><?php  echo($row['sDt'])?></div>
+        </div>
+
+    <?php }?>
+
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="stylesheet" href="stylecsss/stylethongtindoan.css">
+    <?php
+        include("../connection.php");
+    ?>
+    <?php
+        $sql="SELECT * FROM doan";
+        $result=$mysqli->query($sql);
+        while($row=$result->fetch_assoc())
+        {?>
+            <div class="than">
+            <div class="tt">
+                <p><?php echo($row['maDoAn'])?></p>
+            </div>
+            <div class="tt">
+                <p><?php echo($row['tenDoAn'])?></p>
+            </div>
+            <div class="tt">
+                <p><?php echo($row['tenDeTai'])?></p>
+            </div>
+            <div class="tt">
+                <p><?php echo($row['trangThai'])?></p>
+            </div>
+    
+            <!-- <div class="tt">
+                <p>Mã sinh viên</p>
+            </div>
+        
+            <div class="tt">
+                <p>Giáo viên hướng dẫn</p>
+            </div> -->
+        
+        
+            <div class="tt">
+                <p><?php echo($row['ngayBatDau'])?></p>
+            </div>
+        </div>
+     <?php   }?>
+    
+    
+
